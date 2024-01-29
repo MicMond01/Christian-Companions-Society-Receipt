@@ -39,6 +39,7 @@ p {
 .receipt-printout {
   height: 30.8rem;
   width: 49.8rem;
+  margin-bottom: 2rem;
 }
 
 .receipt-no {
@@ -88,7 +89,7 @@ p {
 }
 
 .payment-method {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .payment-method h4 {

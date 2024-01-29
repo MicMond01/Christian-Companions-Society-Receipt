@@ -16,6 +16,9 @@ import CustomDatePicker from "./CustomDatePicker";
 const validationSchema = yup.object({
   amount: yup.string("Enter an amount").required("Amount is required"),
   purpose: yup.string("Enter a purpose").required("Purpose is required"),
+  receipt_number: yup
+    .string("Enter receipt number")
+    .required("Receipt Number is required"),
   from: yup.string("Enter a Name").required("Name is required"),
 });
 
@@ -28,6 +31,7 @@ const Form = ({ setHasValue, formData, setFormData }) => {
       amount: "foobar@example.com",
       purpose: "Building the house of the Lord",
       from: "Adegbola Joseph",
+      receipt_number: "0001",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -43,7 +47,6 @@ const Form = ({ setHasValue, formData, setFormData }) => {
 
   const handleDateChange = (date) => {
     setSelectedDateValue(date);
-    console.log(date);
   };
 
   return (
@@ -61,6 +64,20 @@ const Form = ({ setHasValue, formData, setFormData }) => {
       </div>
 
       <form onSubmit={formik.handleSubmit} className="form-body">
+        <CustomTextInput
+          inputLabel={"Receipt Number"}
+          inputValue={formik.values.receipt_number}
+          handleChangeValue={formik.handleChange}
+          name="receipt_number"
+          formError={
+            formik.touched.receipt_number &&
+            Boolean(formik.errors.receipt_number)
+          }
+          formBlur={formik.handleBlur}
+          formHelperText={
+            formik.touched.receipt_number && formik.errors.receipt_number
+          }
+        />
         <CustomTextInput
           inputLabel={"Amount"}
           inputValue={formik.values.amount}

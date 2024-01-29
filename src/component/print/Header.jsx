@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./../../assets/Receipt.png";
 
 const Header = ({ formData }) => {
-  const { selectedDateValue } = formData;
+  const { selectedDateValue, receipt_number } = formData;
   const [uodatedDate, setUpdatedDate] = useState(null);
 
   const months = [
@@ -48,14 +48,14 @@ const Header = ({ formData }) => {
     getOrdinalNumber();
   }, [day]);
 
-  function generateRandom7DigitNumber() {
-    const min = 1000000; // Smallest 7-digit number
-    const max = 9999999; // Largest 7-digit number
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  // function generateRandom7DigitNumber() {
+  //   const min = 1000000; // Smallest 7-digit number
+  //   const max = 9999999; // Largest 7-digit number
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // }
 
-  // Example usage:
-  const random7DigitNumber = generateRandom7DigitNumber();
+  // // Example usage:
+  // const random7DigitNumber = generateRandom7DigitNumber();
 
   return (
     <div className="header de-flex">
@@ -70,7 +70,7 @@ const Header = ({ formData }) => {
       </div>
       <div className="">
         <div className="new-flex receipt-no">
-          <b>Receipt No. : </b> <p className="date"> {random7DigitNumber}</p>
+          <b>Receipt No. : </b> <p className="date"> {receipt_number}</p>
         </div>
         <div className="new-flex">
           <b>Date: </b>{" "}
