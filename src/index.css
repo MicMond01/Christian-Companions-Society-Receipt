@@ -103,7 +103,7 @@ p {
   line-height: 4rem;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .inputText {
