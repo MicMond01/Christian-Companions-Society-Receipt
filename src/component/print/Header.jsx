@@ -72,7 +72,7 @@ const Header = ({ formData }) => {
         <div className="new-flex receipt-no">
           <b>Receipt No. : </b> <p className="date"> {random7DigitNumber}</p>
         </div>
-        <div className="new-flex">
+        <div className="new-flex"> 
           <b>Date: </b>{" "}
           <p className="date"> {`${uodatedDate} ${monthName}, ${year}`}</p>
         </div>
