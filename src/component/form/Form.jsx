@@ -50,9 +50,9 @@ const Form = ({ setHasValue, formData, setFormData }) => {
   };
 
   return (
-    <div className="">
+    <div className="form">
       <div className="header de-flex">
-        <div className="">
+        <div className="dis-flex">
           <img src={logo} alt="logo" className="logo" />
           <div className="">
             <h3 className="society-name">Christian Companions Society</h3>
